@@ -1,21 +1,21 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: backend
+  name: frontend
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: backend
+        app: frontend
     spec:
       containers:
-        - name: backend
-          image: "torpeekerback:0.1"
+        - name: frontend
+          image: "torpeekerfront:0.1"
           ports:
             - name: http
-              containerPort: 8000
+              containerPort: 80 
           resources:
             limits:
-              cpu: 0.4
-              memory: "1024Mi"
+              cpu: 0.2
+              memory: "256Mi"
