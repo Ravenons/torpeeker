@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: screenshots
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: screenshots
+    spec:
+      containers:
+        - name: screenshots
+          image: 'julienmeerschart/simple-file-upload-download-server'
+          ports:
+            - name: tcp
+              containerPort: 3000
+          resources:
+            limits:
+              cpu: 0.2
+              memory: '128Mi'
+          volumeMounts:
+          - mountPath: /tmp
+            name: screenshots
+      volumes:
+        - name: screenshots
+          persistentVolumeClaim:
+            claimName: screenshots

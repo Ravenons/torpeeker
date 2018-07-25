@@ -1,12 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: frontend
+  name: screenshots
 spec: 
   selector:
-    app: frontend
+    app: screenshots
   ports:
     - protocol: TCP
-      port: 30123
-      targetPort: 80
+      port: 31236
+      targetPort: 3000
   type: ClusterIP

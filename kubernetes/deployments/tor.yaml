@@ -1,20 +1,20 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: frontend
+  name: tor
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: frontend
+        app: tor 
     spec:
       containers:
-        - name: frontend
-          image: 'torpeekerfront:0.1'
+        - name: tor 
+          image: 'torpeekertor:0.1'
           ports:
-            - name: http
-              containerPort: 80 
+            - name: tcp
+              containerPort: 9050
           resources:
             limits:
               cpu: 0.2

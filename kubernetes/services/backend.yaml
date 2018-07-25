@@ -1,12 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: "backend"
+  name: backend
 spec: 
   selector:
-    app: "backend"
+    app: backend
   ports:
-    - protocol: "TCP"
+    - protocol: TCP
       port: 31234
       targetPort: 8000
   type: ClusterIP

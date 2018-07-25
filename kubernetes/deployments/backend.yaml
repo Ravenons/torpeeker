@@ -11,11 +11,11 @@ spec:
     spec:
       containers:
         - name: backend
-          image: "torpeekerback:0.1"
+          image: 'torpeekerback:0.1'
           ports:
             - name: http
               containerPort: 8000
           resources:
             limits:
               cpu: 0.4
-              memory: "1024Mi"
+              memory: '512Mi'
